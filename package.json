@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "build:web-public": "turbo build --filter=web-public",
+    "build:web-logged": "turbo build --filter=web-logged",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.0",
+    "@repo/typescript-config": "workspace:*",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": ">=18"
+  },
+  "name": "with-tailwind"
+}

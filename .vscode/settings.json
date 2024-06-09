@@ -1,0 +1,11 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "tailwindCSS.experimental.configFile": {
+    "packages/config-tailwind/tailwind.config.ts": "apps/**",
+    "packages/ui/tailwind.config.ts": "packages/ui/**"
+  },
+}
