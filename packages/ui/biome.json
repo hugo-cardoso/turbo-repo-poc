@@ -2,7 +2,7 @@
   "extends": [
 		"../../biome.json"
 	],
-	"files": {
-    "include": ["src/**/*"]
+  "files": {
+    "include": ["./src/**/*"]
   }
 }

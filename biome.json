@@ -12,6 +12,15 @@
       },
       "suspicious": {
         "noExtraNonNullAssertion": "off"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "options": {
+            "attributes": ["className"],
+            "functions": ["cslx"]
+          }
+        }
       }
     }
   },
@@ -33,11 +42,5 @@
       "semicolons": "always",
       "bracketSpacing": true
     }
-  },
-  "files": {
-    "include": [
-      "./src/app/**/*",
-      "./src/packages/**/*"
-    ]
   }
 }

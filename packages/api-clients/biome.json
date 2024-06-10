@@ -3,6 +3,6 @@
 		"../../biome.json"
 	],
 	"files": {
-    "include": ["src/**/*"]
+    "include": ["./src/**/*"]
   }
 }

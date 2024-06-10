@@ -25,22 +25,22 @@ export function PokemonTabs(props: PokemonTabsProps) {
       </Tabs.List>
       {props.pokemons.map((pokemon) => (
         <Tabs.Content
-          className="!p-3 relative flex flex-col gap-2 items-center"
+          className="!p-3 relative flex flex-col items-center gap-2"
           key={pokemon.id}
           value={pokemon.name}
         >
-          <code className="absolute right-3 top-3 text-neutral-400 text-sm">
+          <code className="absolute top-3 right-3 text-neutral-400 text-sm">
             #{pokemon.id}
           </code>
-          <div className="w-1/2 aspect-square flex mx-auto">
+          <div className="mx-auto flex aspect-square w-1/2">
             <img
-              className="w-full h-full object-none"
+              className="h-full w-full object-none"
               src={pokemon.sprites.front_default}
               alt={pokemon.name}
             />
           </div>
           <p>{capitalize(pokemon.name)}</p>
-          <p className="text-sm text-neutral-400">
+          <p className="text-neutral-400 text-sm">
             {pokemon.types.map((type) => type.type.name).join(" / ")}
           </p>
         </Tabs.Content>

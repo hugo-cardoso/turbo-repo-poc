@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check ./src",
+    "lint": "biome check ./src --config-path=./biome.json",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

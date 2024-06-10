@@ -21,8 +21,8 @@ function App() {
   const pokemons = pokemonsQuery.map((query) => query.data) as Pokemon[];
 
   return (
-    <div className="w-dvw h-dvh grid place-items-center">
-      <div className="flex flex-col gap-2 w-[300px] items-center">
+    <div className="grid h-dvh w-dvw place-items-center">
+      <div className="flex w-[300px] flex-col items-center gap-2">
         <h1>{import.meta.env.VITE_APP_NAME}</h1>
         {isSuccess && <PokemonTabs pokemons={pokemons} />}
       </div>
