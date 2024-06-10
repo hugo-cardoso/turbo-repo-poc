@@ -7,7 +7,7 @@ import { useCallback, useEffect, useId, type ComponentProps } from "react";
 
 const { Provider, useAtom, useAtomValue } = createIsolation();
 
-const tabsAtom = atom("");
+const tabAtom = atom("");
 const tabsIdAtom = atom("");
 const tabsTitleIdAtom = atom("");
 
@@ -30,14 +30,11 @@ function TabsRoot({
 
   return (
     <Provider
-      initialValues={
-        [
-          [tabsAtom, defaultValue],
-          [tabsIdAtom, id],
-          [tabsTitleIdAtom, tabsTitleId],
-          // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-        ] as any
-      }
+      initialValues={[
+        [tabAtom, defaultValue],
+        [tabsIdAtom, id],
+        [tabsTitleIdAtom, tabsTitleId],
+      ]}
     >
       <div
         className={clsx("ui-w-full ui-flex ui-flex-col", className)}
@@ -74,7 +71,7 @@ interface TabsTriggerProps extends ComponentProps<"button"> {
 
 function TabsTrigger({ className, value, ...attrs }: TabsTriggerProps) {
   const tabsId = useAtomValue(tabsIdAtom);
-  const [tab, setTab] = useAtom(tabsAtom);
+  const [tab, setTab] = useAtom(tabAtom);
 
   const id = createTabId(tabsId, value);
 
@@ -151,7 +148,7 @@ interface TabsContentProps extends ComponentProps<"div"> {
 
 function TabsContent({ className, value, ...attrs }: TabsContentProps) {
   const tabsId = useAtomValue(tabsIdAtom);
-  const tab = useAtomValue(tabsAtom);
+  const tab = useAtomValue(tabAtom);
 
   const id = createTabId(tabsId, value);
 
