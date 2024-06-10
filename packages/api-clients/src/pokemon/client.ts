@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Pokemon } from "./types";
+import { PokemonSchema, type Pokemon } from "./types";
 
 export function createPokemonApiClient() {
   const httpClient = axios.create({
@@ -8,7 +8,9 @@ export function createPokemonApiClient() {
 
   return {
     async getPokemonByName(name: string): Promise<Pokemon> {
-      const { data } = await httpClient.get<Pokemon>(`/pokemon/${name}`);
+      const response = await httpClient.get<Pokemon>(`/pokemon/${name}`);
+      const data = PokemonSchema.parse(response.data);
+
       return {
         id: data.id,
         name: data.name,
