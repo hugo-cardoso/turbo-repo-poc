@@ -16,7 +16,7 @@ function App() {
 				<Card title="Logged App" href="/" target="_blank">
 					Go to the logged app
 				</Card>
-				<Tabs defaultValue="tab1">
+				<Tabs title="My tabs" defaultValue="tab1">
 					<Tabs.List>
 						<Tabs.Trigger value="tab1">Tab 1</Tabs.Trigger>
 						<Tabs.Trigger value="tab2">Tab 2</Tabs.Trigger>
