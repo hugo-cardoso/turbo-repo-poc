@@ -88,25 +88,21 @@ function TabsTrigger({ className, value, ...attrs }: TabsTriggerProps) {
       event.preventDefault();
 
       const target = window.document.getElementById(id);
+      let next: HTMLElement;
 
       if (key === "ArrowLeft") {
-        const previous = target?.previousElementSibling as HTMLElement;
-        const previousValue = previous?.getAttribute("data-value");
-
-        if (previous && previousValue) {
-          setTab(previousValue);
-          previous.focus();
-        }
+        next = target?.previousElementSibling as HTMLElement;
       }
 
       if (key === "ArrowRight") {
-        const next = target?.nextElementSibling as HTMLElement;
-        const nextValue = next?.getAttribute("data-value");
+        next = target?.nextElementSibling as HTMLElement;
+      }
 
-        if (next && nextValue) {
-          setTab(nextValue);
-          next.focus();
-        }
+      const nextValue = next!?.getAttribute("data-value");
+
+      if (next! && !!nextValue) {
+        setTab(nextValue);
+        next.focus();
       }
     },
     [id, setTab],
