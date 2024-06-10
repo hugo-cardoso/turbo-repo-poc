@@ -1,20 +1,23 @@
-import type { ReactNode } from "react";
+import clsx from "clsx";
+import type { ComponentProps, ReactNode } from "react";
+
+interface CardProps extends ComponentProps<"a"> {
+	title: string;
+}
 
 export function Card({
+	className,
 	title,
 	children,
-	href,
-}: {
-	title: string;
-	children: ReactNode;
-	href: string;
-}): JSX.Element {
+	...attrs
+}: CardProps): JSX.Element {
 	return (
 		<a
-			className="ui-group ui-rounded-lg ui-border ui-border-transparent ui-px-5 ui-py-4 ui-transition-colors hover:ui-border-neutral-700 hover:ui-bg-neutral-800/30"
-			href={`${href}?utm_source=create-turbo&utm_medium=with-tailwind&utm_campaign=create-turbo"`}
-			rel="noopener noreferrer"
-			target="_blank"
+			className={clsx(
+				"ui-group ui-rounded-lg ui-border ui-border-transparent ui-px-5 ui-py-4 ui-transition-colors hover:ui-border-neutral-700 hover:ui-bg-neutral-800/30",
+				className,
+			)}
+			{...attrs}
 		>
 			<h2 className="ui-mb-3 ui-text-2xl ui-font-semibold">
 				{title}{" "}
