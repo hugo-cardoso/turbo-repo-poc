@@ -7,11 +7,13 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
-    "clean": "turbo clean"
+    "clean": "turbo clean",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.0",
     "@repo/typescript-config": "workspace:*",
+    "husky": "^9.0.11",
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.15.6",
