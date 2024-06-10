@@ -11,6 +11,8 @@
   },
   "formatter": {
     "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
     "ignore": [
 			"node_modules/*",
 			"*.config.*",

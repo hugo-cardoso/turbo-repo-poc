@@ -7,7 +7,7 @@ import "@repo/ui/styles.css";
 
 // biome-ignore lint/style/noNonNullAssertion: <explanation>
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );
