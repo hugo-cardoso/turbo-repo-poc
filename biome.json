@@ -20,5 +20,18 @@
 			"tsconfig.json",
 			".turbo"
 		]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always",
+      "bracketSpacing": true
+    }
+  },
+  "files": {
+    "include": [
+      "./src/app/**/*",
+      "./src/packages/**/*"
+    ]
   }
 }

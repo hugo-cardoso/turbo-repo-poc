@@ -6,6 +6,7 @@
   "tasks": {
     "build": {
       "dependsOn": [
+        "^type-check",
         "^lint",
         "^build"
       ],

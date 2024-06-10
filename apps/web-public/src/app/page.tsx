@@ -1,31 +1,20 @@
-"use client";
+import { createPokemonApiClient } from "@repo/api-clients/pokemon";
 
-import { Card } from "@repo/ui/card";
-import { Tabs } from "@repo/ui/tabs";
+import { PokemonTabs } from "./_components/PokemonTabs";
 
-export default function Page(): JSX.Element {
+export default async function Page() {
+  const pokemonApiClient = createPokemonApiClient();
+
+  const pokemonNames = ["pikachu", "charmander", "bulbasaur"];
+  const pokemons = await Promise.all(
+    pokemonNames.map(pokemonApiClient.getPokemonByName),
+  );
+
   return (
     <div className="w-dvw h-dvh grid place-items-center">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 w-[300px] items-center">
         <h1>{process.env.NEXT_PUBLIC_APP_NAME}</h1>
-        <Card title="Public App" href="/" target="_blank">
-          Go to the public app
-        </Card>
-        <Card
-          title="Logged App"
-          href="https://turbo-repo-logged.hcardoso.com.br/"
-          target="_blank"
-        >
-          Go to the logged app
-        </Card>
-        <Tabs title="My tabs" defaultValue="tab1">
-          <Tabs.List>
-            <Tabs.Trigger value="tab1">Tab 1</Tabs.Trigger>
-            <Tabs.Trigger value="tab2">Tab 2</Tabs.Trigger>
-          </Tabs.List>
-          <Tabs.Content value="tab1">Tab 1 content</Tabs.Content>
-          <Tabs.Content value="tab2">Tab 2 content</Tabs.Content>
-        </Tabs>
+        <PokemonTabs pokemons={pokemons} />
       </div>
     </div>
   );

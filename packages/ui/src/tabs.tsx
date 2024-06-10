@@ -39,7 +39,10 @@ function TabsRoot({
         ] as any
       }
     >
-      <div className={clsx("ui-flex ui-flex-col", className)} {...attrs}>
+      <div
+        className={clsx("ui-w-full ui-flex ui-flex-col", className)}
+        {...attrs}
+      >
         <span className="ui-sr-only" id={tabsTitleId}>
           {title}
         </span>
@@ -128,7 +131,7 @@ function TabsTrigger({ className, value, ...attrs }: TabsTriggerProps) {
       className={clsx(
         "ui-border ui-border-solid ui-border-neutral-800 ui-py-1 ui-px-3 ui-rounded ui-flex-grow ui-text-sm hover:ui-bg-neutral-800/30 hover:ui-border-neutral-700",
         {
-          "ui-bg-neutral-900 hover:ui-bg-neutral-900": active,
+          "!ui-bg-neutral-900 !hover:ui-bg-neutral-900": active,
         },
         className,
       )}
