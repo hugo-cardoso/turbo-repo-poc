@@ -5,7 +5,8 @@
     }
   ],
   "tailwindCSS.experimental.configFile": {
-    "packages/config-tailwind/tailwind.config.ts": "apps/**",
+    "apps/web-logged/tailwind.config.ts": "apps/web-logged/**",
+    "apps/web-public/tailwind.config.ts": "apps/web-public/**",
     "packages/ui/tailwind.config.ts": "packages/ui/**"
   },
 }
